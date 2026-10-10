@@ -56,7 +56,6 @@ class Solution {
             int mid = (left+right)/2;
             if(nums[mid] == target){
                 res[0] = mid;
-                res[1] = mid;
                 right = mid-1;
             }
             else if(nums[mid] > target){
@@ -70,7 +69,7 @@ class Solution {
         right = nums.length-1;
         while(left<=right){
             int mid = (left+right)/2;
-            if(nums[mid] == target && mid != res[0]){
+            if(nums[mid] == target){
                 res[1] = mid;
                 left = mid+1;
             }
