@@ -5,21 +5,14 @@
 
 class Solution {
     public String reverseWords(String s) {
-        String[] s_arr = s.split(" ");
-        String res = "";
-        for(String words:s_arr){
-            char[] wc = words.toCharArray();
-            int l = 0;
-            int r = wc.length-1;
-            while(l<r){
-                char temp = wc[l];
-                wc[l] = wc[r];
-                wc[r] = temp;
-                l++;
-                r--;
-            }
-            res += String.valueOf(wc)+' ';
+        String[] words = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i<words.length;i++){
+            StringBuilder word = new StringBuilder(words[i]);
+            sb.append(word.reverse());
+            sb.append(" ");
         }
-        return res.substring(0,res.length()-1);
+        String ans = sb.toString();
+        return ans.substring(0,ans.length()-1);
     }
 }
