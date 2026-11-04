@@ -29,11 +29,9 @@ class Solution {
         while(i<(size-n)&&temp.next != null){
             temp = temp.next;
             i++;
-        }if(temp.next == null){
-            temp.next = null;
-        }else{
-            temp.next = temp.next.next;
         }
+        temp.next = temp.next.next;
+        
         
         return head;
     }
